@@ -1,0 +1,14 @@
+@media (max-width: 1450px) {
+	body .uwy.userway_p1 .uai {
+		top: 60px !important;
+		right: 15px !important;
+	}
+
+	body {
+		background-color: #000;
+	}
+
+	.wrap {
+		width: 100%;
+	}
+}
