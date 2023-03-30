@@ -344,7 +344,7 @@
                     </div>
                 </div>
             </div>
-
+            @yield('news')
         </div>
     </div>
 </div>

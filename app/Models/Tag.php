@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class News extends Model
+class Tag extends Model
 {
     use HasFactory;
 
-    public function tags()
+    public function news()
     {
-        return $this->belongsToMany(Tag::class,'post_tags','news_id','tag_id');
+        return $this->belongsToMany(News::class,'post_tags','tag_id','news_id');
     }
 }
