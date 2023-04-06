@@ -9,6 +9,8 @@ class Slide extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function second()
     {
         return $this->hasMany(SecondSlide::class,'slide_id','id');

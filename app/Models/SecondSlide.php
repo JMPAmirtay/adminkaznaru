@@ -9,6 +9,8 @@ class SecondSlide extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function slide()
     {
         return $this->belongsTo(Slide::class, 'slide_id', 'id');

@@ -9,6 +9,8 @@ class NavbarDropdown extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function navbar(){
         return $this->belongsTo(Navbar::class,'navbar_id','id');
     }
