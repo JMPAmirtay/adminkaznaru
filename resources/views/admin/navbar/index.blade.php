@@ -15,7 +15,7 @@
                                 <td>
                                     <i class="expandable-table-caret fas fa-caret-right fa-fw"></i>
                                     {{ $navbar->title }}
-                                    <form action="{{ route('navbar.delete', $navbar->id) }}"
+                                    <form action="{{ route('navbar.destroy', $navbar->id) }}"
                                           method="post">
                                         @csrf
                                         @method('delete')
@@ -35,21 +35,21 @@
                                                 <tr>
                                                     <td>
                                                         {{ $dropdown->title }}
-                                                        <form action="{{ route('dropdown.delete', $dropdown->id) }}"
+                                                        <form action="{{ route('dropdown.destroy', $dropdown) }}"
                                                               method="post">
                                                             @csrf
                                                             @method('delete')
                                                             <input type="submit" value="Удалить"
                                                                    class="btn btn-danger float-right mx-3">
                                                         </form>
-                                                        <a href="{{ route('dropdown.edit', $dropdown->id) }}"
+                                                        <a href="{{ route('dropdown.edit', $dropdown) }}"
                                                            class="btn btn-primary float-right">Редактировать</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
                                             <tr>
                                                 <td>
-                                                    <a href="{{ route('dropdown.create', $navbar->id) }}" class="btn btn-primary">Добавить</a>
+                                                    <a href="{{ route('navbar.dropdown.create', $navbar)}}" class="btn btn-primary">Добавить</a>
                                                 </td>
                                             </tr>
                                             </tbody>

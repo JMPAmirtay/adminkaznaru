@@ -16,7 +16,7 @@
                             <h3 class="card-title">{{$post->title}}</h3>
                         </div>
                         <p class="card-text">{{ $post->Description }}</p>
-                        <form action="{{ route('news.delete', $post->id) }}"
+                        <form action="{{ route('news.destroy', $post->id) }}"
                               method="post">
                             @csrf
                             @method('delete')

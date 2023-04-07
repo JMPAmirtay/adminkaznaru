@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-4">
-            <form action="{{ route('dropdown.update', $dropdown->id) }}" method="post">
+            <form action="{{ route('dropdown.update', $dropdown) }}" method="post">
                 @csrf
                 @method('patch')
                 <div class="card">

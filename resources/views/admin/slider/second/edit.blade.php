@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="row">x`
+    <div class="row">
         <div class="col-4">
-            <form action="{{ route('slider.second.update', $slide->id) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('second.update', $second->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('patch')
                 <div class="card">
@@ -11,7 +11,7 @@
                         <h3 class="card-title">Title</h3>
                     </div>
                     <div class="card-body">
-                        <input name="title" id="title" class="form-control" type="text" value="{{ $slide->title }}">
+                        <input name="title" id="title" class="form-control" type="text" value="{{ $second->title }}">
                     </div>
                 </div>
                 <div class="card">
@@ -19,7 +19,7 @@
                         <h3 class="card-title">Url</h3>
                     </div>
                     <div class="card-body">
-                        <input name="url" id="url" class="form-control" type="text" value="{{ $slide->url }}">
+                        <input name="url" id="url" class="form-control" type="text" value="{{ $second->url }}">
                     </div>
                 </div>
                 <div class="card">

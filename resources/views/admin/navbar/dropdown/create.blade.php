@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-4">
-            <form action="{{ route('dropdown.store') }}" method="post">
+            <form action="{{ route('navbar.dropdown.store', $navbar) }}" method="post">
                 @csrf
                 <div class="card">
                     <input type="hidden" name="navbar_id" id="navbar_id" value="{{ $navbar->id }}">
