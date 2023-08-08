@@ -8,6 +8,7 @@
                     <h3 class="card-title">NavBar</h3>
                 </div>
                 <div class="card-body">
+
                     <table class="table table-hover">
                         <tbody>
                         @foreach($navbars as $navbar)

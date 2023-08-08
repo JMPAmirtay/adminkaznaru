@@ -6,6 +6,15 @@
             <form action="{{ route('news.update', $news->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('patch')
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">{{ $error }}</h3>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Title</h3>

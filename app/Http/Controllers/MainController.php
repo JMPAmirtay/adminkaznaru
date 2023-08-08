@@ -20,7 +20,7 @@ class MainController extends Controller
         $sidebar_links = SidebarLink::all();
         $sidebar_announces = SidebarAnnounce::all();
         $sidebar_conferences = SidebarConference::all();
-        $news = News::all();
+        $news = News::paginate(4);
         $media_tag = Tag::where('title', 'Мультимедиа')->firstOrFail()->news;
         $mass_media_tag = Tag::where('title', 'СМИ о нас')->firstOrFail()->news;
         $congratulation_tag = Tag::where('title', 'Поздравления')->firstOrFail()->news;

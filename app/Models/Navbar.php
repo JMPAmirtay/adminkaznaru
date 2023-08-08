@@ -11,7 +11,8 @@ class Navbar extends Model
 
     protected $guarded = [];
 
-    public function dropdowns(){
+    public function dropdowns()
+    {
         return $this->hasMany(NavbarDropdown::class,'navbar_id','id');
     }
 }

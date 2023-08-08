@@ -30,7 +30,7 @@ class NavbarController extends Controller
      */
     public function store(StoreNavbarRequest $request)
     {
-        $data = request()->validate([
+        $data = $request->validate([
             'title' => 'string',
             'class' => 'string'
         ]);
@@ -59,7 +59,7 @@ class NavbarController extends Controller
      */
     public function update(UpdateNavbarRequest $request, Navbar $navbar)
     {
-        $data = request()->validate([
+        $data = $request->validate([
             'title' => 'string'
         ]);
         $navbar->update($data);

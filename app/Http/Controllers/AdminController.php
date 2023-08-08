@@ -18,25 +18,4 @@ class AdminController extends Controller
     {
         return view('layouts.admin');
     }
-
-
-    public function slider_second_edit(SecondSlide $slide)
-    {
-        return view('admin.slider.second.edit', compact('slide'));
-    }
-    public function slider_second_update(SecondSlide $slide)
-    {
-        $data = request()->all();
-        if (isset($data['image'])) {
-            $filename = $data['image']->getClientOriginalName();
-
-            //Сохраняем оригинальную картинку
-            $data['image']->move(public_path('data\content'), $filename);
-
-            $data['image'] = 'data/content/' . $filename;
-            $data['name'] = pathinfo($filename)['filename'];
-        }
-        $slide->update($data);
-        return redirect(route('admin.slider'));
-    }
 }

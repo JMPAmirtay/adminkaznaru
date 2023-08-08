@@ -33,7 +33,7 @@ class NewsController extends Controller
      */
     public function store(StoreNewsRequest $request)
     {
-        $data = request()->all();
+        $data = $request->all();
         $tags = $data['tag'];
         unset($data['tag']);
         if (isset($data['image'])) {
@@ -46,7 +46,6 @@ class NewsController extends Controller
             $data['image_name'] = pathinfo($filename)['filename'];
         }
         $post = News::create($data);
-
         foreach ($tags as $tag) {
             PostTag::create(['news_id' => $post->id, 'tag_id' => $tag]);
         }
@@ -74,7 +73,7 @@ class NewsController extends Controller
      */
     public function update(UpdateNewsRequest $request, News $news)
     {
-        $data = request()->all();
+        $data = $request->all();
         if (isset($data['tag'])) {
             $tags = $data['tag'];
             $post_tags = PostTag::all();

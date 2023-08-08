@@ -15,6 +15,7 @@ class DropdownController extends Controller
     public function index()
     {
         //
+
     }
 
     /**
@@ -30,7 +31,7 @@ class DropdownController extends Controller
      */
     public function store(StoreNavbarDropdownRequest $request)
     {
-        $data = request()->validate([
+        $data = $request->validate([
             'title' => 'string',
             'url' => 'string',
             'navbar_id' => 'string'
@@ -60,7 +61,7 @@ class DropdownController extends Controller
      */
     public function update(UpdateNavbarDropdownRequest $request, Navbar $navbar, NavbarDropdown $dropdown)
     {
-        $data = request()->validate([
+        $data = $request->validate([
             'title' => 'string',
             'url' => 'string'
         ]);

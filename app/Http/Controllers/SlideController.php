@@ -54,7 +54,7 @@ class SlideController extends Controller
      */
     public function update(UpdateSlideRequest $request, Slide $slide)
     {
-        $data = request()->all();
+        $data = $request->all();
         if (isset($data['image'])) {
             $filename = $data['image']->getClientOriginalName();
 

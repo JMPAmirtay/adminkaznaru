@@ -51,9 +51,20 @@ class SecondSlideController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSecondSlideRequest $request, SecondSlide $secondSlide)
+    public function update(UpdateSecondSlideRequest $request, SecondSlide $second)
     {
-        //
+        $data = $request->all();
+        if (isset($data['image'])) {
+            $filename = $data['image']->getClientOriginalName();
+
+            //Сохраняем оригинальную картинку
+            $data['image']->move(public_path('data\content'), $filename);
+
+            $data['image'] = 'data/content/' . $filename;
+            $data['name'] = pathinfo($filename)['filename'];
+        }
+        $second->update($data);
+        return redirect(route('admin.slider'));
     }
 
     /**

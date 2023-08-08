@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth'], 'controller' => 'App\Http\Controllers\AdminController'], function () {
+Route::group(['prefix' => 'admin', 'controller' => 'App\Http\Controllers\AdminController'], function () {
     Route::get('/', 'index')->name('layouts.admin');
 
     Route::resource('navbar', NavbarController::class)->names(['index' => 'admin.navbar',]);
@@ -31,9 +31,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth'], 'controlle
     Route::resource('news', NewsController::class)->names(['index' => 'admin.news']);
 
     Route::resource('slider', SlideController::class)->names(['index' => 'admin.slider'])->only([
-        'index', 'edit', 'update']);;
+        'index', 'edit', 'update']);
 
-    Route::resource('slider.second', SecondSlideController::class)->only(['edit', 'update'])->shallow();;
+    Route::resource('slider.second', SecondSlideController::class)->only(['edit', 'update'])->shallow();
 });
 
 Route::get('/', [MainController::class, 'index'])->name('layouts.app');

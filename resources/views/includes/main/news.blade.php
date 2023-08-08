@@ -15,7 +15,7 @@
         </div>
         <div class="mainbar-news">
             <div id="newsbox1">
-                @foreach($news->take(4) as $post)
+                @foreach($news as $post)
                     <div class="news-box">
                         <a
                             href="{{ $post->url }}"
